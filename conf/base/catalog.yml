@@ -1,0 +1,79 @@
+incidents: 
+  type: partitions.PartitionedDataset
+  path: ${_base_location}/01_raw/incidents
+  dataset:
+    type: pandas.CSVDataset
+    load_args:
+      sep: ','
+      engine: 'python'
+  filename_suffix: 'csv'
+
+firestations:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/01_raw/casernes.csv
+
+firestation_areas:
+  type: geopandas.GeoJSONDataSet
+  filepath: ${_base_location}/01_raw/territoires-administratifs-casernes.geojson
+
+property_assessments:
+  type: geopandas.GeoJSONDataSet
+  filepath: ${_base_location}/01_raw/uniteevaluationfoncieregeo.geojson
+
+census:
+  type: geopandas.GeoJSONDataSet
+  filepath: ${_base_location}/01_raw/census.geojson
+
+combined_incidents:
+  type: pandas.ParquetDataset
+  filepath: ${_base_location}/02_intermediate/combined_incidents.pq
+
+preprocessed_incidents:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/02_intermediate/preprocessed_incidents.csv
+
+preprocessed_firestations:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/02_intermediate/preprocessed_firestations.csv
+
+preprocessed_firestation_areas:
+  type: geopandas.GeoJSONDataSet
+  filepath: ${_base_location}/02_intermediate/preprocessed_firestation_areas.geojson
+
+preprocessed_property_assessments:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/02_intermediate/preprocessed_property_assessments.csv
+
+preprocessed_census:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/02_intermediate/preprocessed_census.csv
+
+square_mesh:
+  type: geopandas.GeoJSONDataSet
+  filepath: ${_base_location}/02_intermediate/square_mesh.geojson
+  save_args:
+    driver: GeoJSON
+
+spatial_joined_incidents:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/02_intermediate/spatial_joined_incidents.csv
+
+spatial_joined_property_assessments:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/02_intermediate/spatial_joined_property_assessments.csv
+
+spatial_joined_census:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/02_intermediate/spatial_joined_census.csv
+
+merged_incidents_property_assessments:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/03_primary/merged_incidents_property_assessments.csv
+
+merged_incidents_property_assessments_census:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/03_primary/merged_incidents_property_assessments_census.csv
+
+input_table:
+  type: pandas.CSVDataset
+  filepath: ${_base_location}/05_model_input/input_table.csv

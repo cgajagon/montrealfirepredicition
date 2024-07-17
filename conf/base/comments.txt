@@ -1,0 +1,6 @@
+Best parameters: 
+{'classifier__colsample_bytree': 0.6, 'classifier__learning_rate': 0.1, 'classifier__max_depth': 9, 'classifier__n_estimators': 100, 'classifier__subsample': 0.6}
+
+Best parameters found:  
+{'regressor__max_depth': 10, 'regressor__min_samples_leaf': 2, 'regressor__min_samples_split': 10, 'regressor__n_estimators': 100}
+Best ROC AUC Score:  0.5904567915569618
