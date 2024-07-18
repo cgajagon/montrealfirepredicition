@@ -1,3 +1,10 @@
+geopandas==0.13.2
+kedro==0.19.6
+kedro_viz==7.1.0
+numpy==1.22.3
+pandas==2.0.3
+pyproj==3.5.0
+Shapely==2.0.5
 ipython>=8.10
 jupyterlab>=3.0
 kedro~=0.19.6

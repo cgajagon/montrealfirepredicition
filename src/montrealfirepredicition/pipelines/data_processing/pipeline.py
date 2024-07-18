@@ -51,5 +51,4 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="preprocess_census_node",
             ),
         ],
-        namespace="ingestion"
     )
